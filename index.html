@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periksa Nama</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background: white;
+            color: black;
+            padding: 20px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+        img {
+            width: 150px; /* Ukuran gambar lebih kecil */
+            display: block;
+            margin: 0 auto 10px auto;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            width: 80%;
+            max-width: 300px;
+            border: 1px solid #ccc;
+            background: white;
+            color: black;
+            display: block;
+            margin: 10px auto;
+        }
+        button {
+            background-color: gray;
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+        button:hover {
+            background-color: darkgray;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            background: white;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://files.catbox.moe/4v580x.jpg" alt="Gambar">
+        <h2>Masukkan Nama Mu</h2>
+        <input type="text" id="nama" placeholder="Masukkan nama">
+        <button onclick="periksaNama()">Periksa</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function periksaNama() {
+            const namaInput = document.getElementById("nama").value.trim();
+            const namaKecil = namaInput.toLowerCase();
+            let hasil = "Jose menebak nama ortu mu🗿 = Tidak diketahui";
+
+            const dataNama = {
+                "indah": "Manggiring",
+                "ndah": "Manggiring",
+                "yennyta": "Manggiring",
+                "yenita": "Manggiring",
+                "chelsea": "Tony",
+                "celsi": "Tony",
+                "chel": "Tony",
+                "cel": "Tony",
+                "rafael": "Tony",
+                "raf": "Tony",
+                "riski": "Koran",
+                "rizky": "Koran",
+                "okto": "Sony",
+                "to": "Sony",
+                "bryan": "Lenny, Reynald",
+                "bry": "Lenny, Reynald"
+            };
+
+            if (dataNama[namaKecil]) {
+                hasil = `Jose menebak nama ortu mu🗿 = ${dataNama[namaKecil]}`;
+            }
+
+            const resultBox = document.getElementById("result");
+            resultBox.innerText = hasil;
+            resultBox.style.display = "block";
+        }
+    </script>
+</body>
+</html>
